@@ -33,8 +33,6 @@ public class RestCountryParameterizedJUnitTest extends BaseTest {
     @Autowired
     private WebApplicationContext wac;
 
-    private TestContextManager testContextManager;
-
     @LocalServerPort
     private int localServerPort;
 
@@ -66,8 +64,8 @@ public class RestCountryParameterizedJUnitTest extends BaseTest {
 
     @Before
     public void setup() throws Exception {
-        this.testContextManager = new TestContextManager(getClass());
-        this.testContextManager.prepareTestInstance(this);
+        TestContextManager testContextManager = new TestContextManager(getClass());
+        testContextManager.prepareTestInstance(this);
     }
 
     @Test

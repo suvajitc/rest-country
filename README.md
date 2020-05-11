@@ -13,8 +13,14 @@ To Shutdown the application:
 Run a curl request or through postman to following endpoint:
 localhost:8080/actuator/shutdown (both user and password: admin with basic authentication)
 
+To call local springboot endpoints:
+http://localhost:8080/v1/countries/name?search=USA&fullText=false
+http://localhost:8080/v1/countries/code?search=IN
+
 To Run the JUnit Tests from Command Line
 
 `mvn clean test`
+
+Please Note: Due to a bug with junit surefire plugin (https://github.com/junit-team/junit4/issues/664), the Parameterized test does not get run when you run mvn test from command line. But you can run the parameterized test from any IDE.
 
 Created By: Suvajit Chakraborty
